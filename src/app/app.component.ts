@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TasksFacade } from './components/store/tasks.facade';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'taskbox';
+  facade = inject(TasksFacade)
+
+  ngOnInit(){
+    this.facade.loadTasks()
+  }
+
 }

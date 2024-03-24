@@ -65,6 +65,7 @@ export default class TaskComponent {
    * @param id string
    */
   onPin(id: any) {
+    alert('onPinTask')
     this.onPinTask.emit(id);
   }
   /**
